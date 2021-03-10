@@ -1,0 +1,62 @@
+body {
+  font-family: monospace;
+  font-size: 20px;
+  padding: 30px;
+  color: rgb(16, 144, 16);
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  text-transform: capitalize;
+}
+h4 {
+  text-align: center;
+  font-size: small;
+  line-height: 12px;
+}
+p {
+  text-align: center;
+  font-size: 34px;
+  background: rgb(221, 243, 223, 0.3);
+  line-height: 45px;
+  border: 1px solid rgb(235, 232, 232, 0.9);
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+footer {
+  text-align: center;
+  font-size: small;
+  line-height: 24px;
+}
+
+a {
+  color: rgb(16, 144, 16);
+}
+
+.card-body {
+  border: 3px solid rgba(203, 233, 205, 0.9);
+  border-radius: 6px;
+}
+.city-name {
+  background-color: rgb(221, 243, 223, 0.3);
+  border: 1px solid rgb(235, 232, 232, 0.9);
+  border-radius: 4px;
+}
+.button-search {
+  background-color: rgb(221, 243, 223, 0.3);
+  border: 1px solid rgb(235, 232, 232, 0.9);
+  border-radius: 4px;
+}
+
+.card-forecast {
+  background-color: rgb(221, 243, 223, 0.3);
+  text-align: center;
+  padding: 10px;
+}
+.units {
+  position: relative;
+  top: -10px;
+  font-size: 20px;
+}
