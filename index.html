@@ -4,9 +4,137 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WeatherApp</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
-  <body></body>
-  <script src="src/script.js"></script>
+
+  <body>
+    <div class="container">
+      <div class="card" style="width: 62rem">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <form class="search-form" id="search-form">
+                <input
+                  type="search"
+                  placeholder="Enter city name here"
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-name"
+                />
+                <input type="submit" value="🔍Search" class="button-search" />
+                <input
+                  type="submit"
+                  value="Current"
+                  class="button-search"
+                  id="current-location-button"
+                />
+              </form>
+              <h2 id="city">
+                <strong>BUCHAREST, Ro</strong>
+              </h2>
+              <h4>Thuesday, 21 January 2021</h4>
+
+              <p>
+                🌞
+                <strong>
+                  <span class="temperature" id="temperature"> 17</span>
+                </strong>
+                <span class="units">
+                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+                <br />
+                <strong id="description"> Sunny </strong>
+              </p>
+
+              <footer>Last Update 19:52</footer>
+              <br />
+              <div class="row">
+                <div class="col-6">Precipitation:2%</div>
+                <div class="col-6">Wind: <span id="wind">4</span> km/h</div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  Humidity:<span id="humidity">76</span> %
+                </div>
+                <div class="col-6">
+                  Pressure: <span id="pressure">1013</span> mb
+                </div>
+              </div>
+              <br />
+              <br />
+
+              <div class="row">
+                <div class="col-6">🌞Sunrise 7:30</div>
+                <div class="col-6">🌛Sunset 17:29</div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="card" style="width: 28rem">
+                <div class="card-forecast">
+                  <div class="row">
+                    <div class="col-6">Friday</div>
+                    <div class="col-6">⛅</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">22 Jan</div>
+                    <div class="col-6">11°C| 2°C</div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-6">Saturday</div>
+                    <div class="col-6">🌞</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">23 Jan</div>
+                    <div class="col-6">9°C| 2°C</div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-6">Sunday</div>
+                    <div class="col-6">🌧️</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">24 Jan</div>
+                    <div class="col-6">4°C| 2°C</div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-6">Monday</div>
+                    <div class="col-6">☂️</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">25 Jan</div>
+                    <div class="col-6">11°C| 7°C</div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-6">Tuesday</div>
+                    <div class="col-6">🌞</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">26 Jan</div>
+                    <div class="col-6">14°C| 4°C</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
 </html>
