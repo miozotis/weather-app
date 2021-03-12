@@ -3,6 +3,10 @@ body {
   font-size: 20px;
   padding: 30px;
   color: rgb(16, 144, 16);
+
+  background: url(https://florarie-in-constanta.ro/wp-content/uploads/2019/01/Cosuri-cu-flori_1-8Martie_Dragobete_flori-roz_evenimente-speciale_aniversari_onomastica_sfMaria_vara.jpg)
+    no-repeat center fixed;
+  background-size: cover;
 }
 
 h2 {
