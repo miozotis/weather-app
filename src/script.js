@@ -59,6 +59,26 @@ let days = [
   "Friday",
   "Saturday"
 ];
+
+let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let month = months[now.getMonth()];
+  
+  let year = now.getFullYear();
+  let date = now.getDate();
+
 let day = days[now.getDay()];
 let hours = now.getHours();
 if (hours < 10) {
@@ -68,7 +88,7 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-h4.innerHTML = `${day} ${hours}:${minutes}`;
+h4.innerHTML = `${day}, ${month} ${date}, ${year}`;
 footer.innerHTML = `Last Update ${hours}:${minutes}`;
 // 2. Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 
