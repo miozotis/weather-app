@@ -1,19 +1,80 @@
+function showDate (timestamp){
+
+  let date = new Date (timestamp);
+ 
+  let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+  let day = days[date.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let month = months[date.getMonth()]; 
+  let year = date.getFullYear();
+  let number = date.getDate();
+
+  
+  return `${day}, ${month} ${number}, ${year} `;
+}
+  
+  function showUpdate(timestamp){
+
+    let date = new Date (timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+    hours = `0${hours}`;
+}
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+    minutes = `0${minutes}`;
+}
+  return `${hours}:${minutes}`
+}
+
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
 
   document.querySelector("#country").innerHTML = response.data.sys.country;
-  
+
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  
+  document.querySelector("#feels-like").innerHTML = 
+    response.data.main.feelslike;
+
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+document.querySelector("#sunset").innerHTML = showUpdate(response.data.sys.sunset * 1000);
+document.querySelector("#sunrise").innerHTML = showUpdate(response.data.sys.sunrise * 1000);
+    
+    console.log(response);
+
+    let dateElement = document.querySelector("#date");
+    dateElement.innerHTML = showDate(response.data.dt * 1000); 
+    
+    let updateElement = document.querySelector("#update");
+    updateElement.innerHTML = showUpdate(response.data.dt * 1000);
 }
 
 function searchCity(city) {
@@ -45,54 +106,10 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("BUCHAREST");
+searchCity("Bucharest");
 
 
-let now = new Date();
 
-let h4 = document.querySelector("h4");
-let footer = document.querySelector("footer");
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-
-let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-  let month = months[now.getMonth()];
-  
-  let year = now.getFullYear();
-  let date = now.getDate();
-
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-h4.innerHTML = `${day}, ${month} ${date}, ${year}`;
-footer.innerHTML = `Last Update ${hours}:${minutes}`;
 // 2. Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 
 // 3.🙀Bonus Feature

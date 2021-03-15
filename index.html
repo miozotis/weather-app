@@ -39,11 +39,13 @@
                   id="current-location-button"
                 />
               </form>
+
               <h2>
                 <span id="city"> Bucharest</span>,
                 <span id="country"> Ro</span>
               </h2>
-              <h4>Thuesday, 21 January 2021</h4>
+
+              <h4 id="date">Thuesday, 21 January 2021</h4>
 
               <p>
                 🌞
@@ -55,13 +57,17 @@
                   <a href="#" id="fahrenheit-link">°F</a>
                 </span>
                 <br />
-                <strong id="description"> Sunny </strong>
+                <strong>
+                  <span class="description" id="description"> Sunny </span>
+                </strong>
               </p>
 
-              <footer>Last Update 19:52</footer>
+              <footer>Last update <span id="update"> 17:45 </span></footer>
               <br />
               <div class="row">
-                <div class="col-6">Precipitation:2%</div>
+                <div class="col-6">
+                  Feels like: <span id="feels-like">15</span>°C
+                </div>
                 <div class="col-6">Wind: <span id="wind">4</span> km/h</div>
               </div>
 
@@ -77,8 +83,10 @@
               <br />
 
               <div class="row">
-                <div class="col-6">🌞Sunrise 7:30</div>
-                <div class="col-6">🌛Sunset 17:29</div>
+                <div class="col-6">
+                  🌞Sunrise <span id="sunrise">6:58</span>
+                </div>
+                <div class="col-6">🌛Sunset <span id="sunset">17:45</span></div>
               </div>
             </div>
 
