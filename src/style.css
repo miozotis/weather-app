@@ -23,6 +23,7 @@ h4 {
   font-size: small;
   line-height: 12px;
 }
+
 p {
   text-align: center;
   font-size: 34px;
@@ -32,6 +33,13 @@ p {
   border-radius: 4px;
   text-transform: capitalize;
 }
+.temperature {
+  font-size: 46px;
+}
+.description:first-letter {
+  text-transform: capitalize;
+}
+
 footer {
   text-align: center;
   font-size: small;
@@ -49,6 +57,7 @@ a {
 .card-body {
   border: 3px solid rgba(203, 233, 205, 0.9);
   border-radius: 6px;
+  text-align: left;
 }
 .city-name {
   background-color: rgb(221, 243, 223, 0.3);
@@ -59,21 +68,27 @@ a {
   background-color: rgb(221, 243, 223, 0.3);
   border: 1px solid rgb(235, 232, 232, 0.9);
   border-radius: 4px;
+  margin-left: 10px;
 }
 
 .card-forecast {
   background-color: rgb(221, 243, 223, 0.3);
   text-align: center;
+  line-height: 15px;
   padding: 10px;
 }
 .units {
   position: relative;
-  top: -10px;
+  top: -20px;
   font-size: 20px;
 }
-
 .gitHub-link {
   text-align: center;
   margin: 0 auto;
   color: white;
+}
+
+#weekday {
+  margin-top: 50px;
+  font-size: 24px;
 }

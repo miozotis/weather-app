@@ -19,7 +19,7 @@
 
   <body>
     <div class="container">
-      <div class="card" style="width: 62rem">
+      <div class="card" style="width: 64rem">
         <div class="card-body">
           <div class="row">
             <div class="col-6">
@@ -39,7 +39,6 @@
                   id="current-location-button"
                 />
               </form>
-
               <h2>
                 <span id="city"> Bucharest</span>,
                 <span id="country"> Ro</span>
@@ -48,7 +47,10 @@
               <h4 id="date">Thuesday, 21 January 2021</h4>
 
               <p>
-                🌞
+                <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  id="icon"
+                />
                 <strong>
                   <span class="temperature" id="temperature"> 17</span>
                 </strong>
@@ -57,9 +59,8 @@
                   <a href="#" id="fahrenheit-link">°F</a>
                 </span>
                 <br />
-                <strong>
-                  <span class="description" id="description"> Sunny </span>
-                </strong>
+
+                <span class="description" id="description"> Sunny </span>
               </p>
 
               <footer>Last update <span id="update"> 17:45 </span></footer>
@@ -79,59 +80,94 @@
                   Pressure: <span id="pressure">1013</span> mb
                 </div>
               </div>
-              <br />
-              <br />
 
               <div class="row">
                 <div class="col-6">
-                  🌞Sunrise <span id="sunrise">6:58</span>
+                  <img
+                    src=" https://openweathermap.org/img/wn/01d@2x.png"
+                  />Sunrise: <span id="sunrise">6:58</span>
                 </div>
-                <div class="col-6">🌛Sunset <span id="sunset">17:45</span></div>
+                <div class="col-6">
+                  <img
+                    src=" https://openweathermap.org/img/wn/01n@2x.png"
+                  />Sunset: <span id="sunset">17:45</span>
+                </div>
               </div>
+              <br />
+
+              <br />
+              <small>
+                Hey You, beautiful Being, have a wonderful day, everyday!</small
+              >
             </div>
 
             <div class="col-6">
-              <div class="card" style="width: 28rem">
+              <div class="card" style="width: 26rem">
                 <div class="card-forecast">
+                  <span class="row">
+                    <span class="col-6" id="weekday">Friday</span>
+                    <span class="col-6">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        id="icon"
+                      />
+                    </span>
+                  </span>
+                  <span class="row">
+                    <span class="col-6">22 Jan</span>
+                    <span class="col-6">11°C| 2°C</span>
+                  </span>
+
                   <div class="row">
-                    <div class="col-6">Friday</div>
-                    <div class="col-6">⛅</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-6">22 Jan</div>
-                    <div class="col-6">11°C| 2°C</div>
-                  </div>
-                  <br />
-                  <div class="row">
-                    <div class="col-6">Saturday</div>
-                    <div class="col-6">🌞</div>
+                    <div class="col-6" id="weekday">Saturday</div>
+                    <div class="col-6">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        id="icon"
+                      />
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-6">23 Jan</div>
                     <div class="col-6">9°C| 2°C</div>
                   </div>
-                  <br />
+
                   <div class="row">
-                    <div class="col-6">Sunday</div>
-                    <div class="col-6">🌧️</div>
+                    <div class="col-6" id="weekday">Sunday</div>
+                    <div class="col-6">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        id="icon"
+                      />
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-6">24 Jan</div>
                     <div class="col-6">4°C| 2°C</div>
                   </div>
-                  <br />
+
                   <div class="row">
-                    <div class="col-6">Monday</div>
-                    <div class="col-6">☂️</div>
+                    <div class="col-6" id="weekday">Monday</div>
+                    <div class="col-6">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        id="icon"
+                      />
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-6">25 Jan</div>
                     <div class="col-6">11°C| 7°C</div>
                   </div>
-                  <br />
+
                   <div class="row">
-                    <div class="col-6">Tuesday</div>
-                    <div class="col-6">🌞</div>
+                    <div class="col-6" id="weekday">Tuesday</div>
+                    <div class="col-6">
+                      <img
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
+                        id="icon"
+                      />
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-6">26 Jan</div>
@@ -145,10 +181,12 @@
       </div>
 
       <div class="gitHub-link">
-        <a href="https://github.com/miozotis/weather-app"> Open-source code </a
+        <a href="https://github.com/miozotis/weather-app" target="_blank">
+          Open-source code</a
         >, created with ❤ by Cristina
       </div>
     </div>
+
     <script src="src/script.js"></script>
   </body>
 </html>

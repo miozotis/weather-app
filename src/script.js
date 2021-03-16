@@ -1,3 +1,5 @@
+
+
 function showDate (timestamp){
 
   let date = new Date (timestamp);
@@ -49,6 +51,8 @@ function showDate (timestamp){
 }
 
 
+
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
 
@@ -59,8 +63,7 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   
-  document.querySelector("#feels-like").innerHTML = 
-    response.data.main.feelslike;
+  document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
 
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
   document.querySelector("#description").innerHTML =
@@ -75,16 +78,21 @@ document.querySelector("#sunrise").innerHTML = showUpdate(response.data.sys.sunr
     
     let updateElement = document.querySelector("#update");
     updateElement.innerHTML = showUpdate(response.data.dt * 1000);
+
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function searchCity(city) {
   let apiKey = "c8a7ad2645f8d69498f4e78e152d80f6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-name").value;
+  
 
   searchCity(city);
 }
@@ -110,10 +118,7 @@ searchCity("Bucharest");
 
 
 
-// 2. Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 
-// 3.🙀Bonus Feature
-// Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
