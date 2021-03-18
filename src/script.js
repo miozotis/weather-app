@@ -1,5 +1,4 @@
 
-
 function showDate (timestamp){
 
   let date = new Date (timestamp);
@@ -58,9 +57,11 @@ function displayWeatherCondition(response) {
 
   document.querySelector("#country").innerHTML = response.data.sys.country;
 
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  
+  
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
@@ -114,7 +115,7 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("Bucharest");
+
 
 
 
@@ -122,13 +123,25 @@ searchCity("Bucharest");
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 63;
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let fahrenheitTemperature = (celsiusTemperature * 9)/5 + 32;  
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+let celsiusTemperature = null;
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 17;
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -136,3 +149,7 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+
+
+searchCity("Bucharest");

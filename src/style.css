@@ -48,6 +48,7 @@ footer {
 
 a {
   color: rgb(16, 144, 16);
+  text-decoration: none;
 }
 
 .card {
@@ -91,4 +92,8 @@ a {
 #weekday {
   margin-top: 50px;
   font-size: 24px;
+}
+
+.active {
+  cursor: default;
 }
