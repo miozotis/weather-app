@@ -49,6 +49,20 @@ function showDate (timestamp){
   return `${hours}:${minutes}`
 }
 
+function formatHours(timestamp){
+
+    let date = new Date (timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+    hours = `0${hours}`;
+}
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+    minutes = `0${minutes}`;
+
+  return `${hours}:${minutes}`;
+}
+}
 
 
 
@@ -63,6 +77,7 @@ function displayWeatherCondition(response) {
   
   
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
 
@@ -84,11 +99,101 @@ document.querySelector("#sunrise").innerHTML = showUpdate(response.data.sys.sunr
     iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
+function displayForecast (response){
+ 
+let forecastElement = document.querySelector("#forecast");
+let forecast = response.data.list[0];
+
+
+forecastElement.innerHTML = `
+
+<div class="col-6" id="interpretation">${forecast.weather[0].description}</div>
+  <div class="col-6">
+    <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+          id="icon" />
+  </div>
+
+  <div class="row">
+    <div class="col-6">${formatHours(forecast.dt * 1000)}</div>
+      <div class="col-6 weather-forecast-temperature">
+        <strong>${Math.round(forecast.main.temp_max)}</strong>°C| ${Math.round(forecast.main.temp_min)}°C
+          </div>
+  </div>`;
+
+  forecast = response.data.list[1];
+  forecastElement.innerHTML = forecastElement.innerHTML +`
+
+<div class="col-6" id="interpretation">${forecast.weather[0].description}</div>
+  <div class="col-6">
+    <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+          id="icon" />
+  </div>
+
+  <div class="row">
+    <div class="col-6">${formatHours(forecast.dt * 1000)}</div>
+      <div class="col-6 weather-forecast-temperature">
+        <strong>${Math.round(forecast.main.temp_max)}</strong>°C| ${Math.round(forecast.main.temp_min)}°C
+          </div>
+  </div>`;
+
+forecast = response.data.list[2];
+  forecastElement.innerHTML = forecastElement.innerHTML +`
+
+<div class="col-6" id="interpretation">${forecast.weather[0].description}</div>
+  <div class="col-6">
+    <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+          id="icon" />
+  </div>
+
+  <div class="row">
+    <div class="col-6">${formatHours(forecast.dt * 1000)}</div>
+      <div class="col-6 weather-forecast-temperature">
+        <strong>${Math.round(forecast.main.temp_max)}</strong>°C| ${Math.round(forecast.main.temp_min)}°C
+          </div>
+  </div>`;
+
+  forecast = response.data.list[3];
+  forecastElement.innerHTML = forecastElement.innerHTML +`
+
+<div class="col-6" id="interpretation">${forecast.weather[0].description}</div>
+  <div class="col-6">
+    <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+          id="icon" />
+  </div>
+
+  <div class="row">
+    <div class="col-6">${formatHours(forecast.dt * 1000)}</div>
+      <div class="col-6 weather-forecast-temperature">
+        <strong>${Math.round(forecast.main.temp_max)}</strong>°C| ${Math.round(forecast.main.temp_min)}°C
+          </div>
+  </div>`;
+
+  forecast = response.data.list[4];
+  forecastElement.innerHTML = forecastElement.innerHTML +`
+
+<div class="col-6" id="interpretation">${forecast.weather[0].description}</div>
+  <div class="col-6">
+    <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+          id="icon" />
+  </div>
+
+  <div class="row">
+    <div class="col-6">${formatHours(forecast.dt * 1000)}</div>
+      <div class="col-6 weather-forecast-temperature">
+        <strong>${Math.round(forecast.main.temp_max)}</strong>°C| ${Math.round(forecast.main.temp_min)}°C
+          </div>
+  </div>`;
+
+}
+
 function searchCity(city) {
   let apiKey = "c8a7ad2645f8d69498f4e78e152d80f6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function handleSubmit(event) {
   event.preventDefault();

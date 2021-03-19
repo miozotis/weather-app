@@ -89,11 +89,13 @@ a {
   color: white;
 }
 
-#weekday {
+#interpretation {
   margin-top: 50px;
   font-size: 24px;
 }
-
+#interpretation::first-letter {
+  text-transform: capitalize;
+}
 .active {
   cursor: default;
 }
