@@ -40,19 +40,21 @@
                 />
               </form>
               <h2>
-                <span id="city"> Bucharest</span>,
-                <span id="country"> Ro</span>
+                <strong>
+                  <span id="city"> </span>,
+                  <span id="country"> </span>
+                </strong>
               </h2>
 
-              <h4 id="date">Thuesday, 21 January 2021</h4>
+              <h4 id="date"></h4>
 
-              <p>
+              <div class="cityWeatherParagraph">
                 <img
                   src="https://openweathermap.org/img/wn/10d@2x.png"
                   id="icon"
                 />
                 <strong>
-                  <span class="temperature" id="temperature"> 17</span>
+                  <span class="temperature" id="temperature"> </span>
                 </strong>
                 <span class="units">
                   <a href="#" id="celsius-link" class="active">°C</a> |
@@ -60,24 +62,24 @@
                 </span>
                 <br />
 
-                <span class="description" id="description"> Sunny </span>
-              </p>
+                <div class="description" id="description"></div>
+              </div>
 
-              <footer>Last update <span id="update"> 17:45 </span></footer>
+              <footer>Last update <span id="update"></span></footer>
               <br />
               <div class="row">
                 <div class="col-6">
-                  Feels like: <span id="feels-like">15</span>°C
+                  Feels like: <span id="feels-like"></span>°C
                 </div>
-                <div class="col-6">Wind: <span id="wind">4</span> km/h</div>
+                <div class="col-6">Wind: <span id="wind"></span> km/h</div>
               </div>
 
               <div class="row">
                 <div class="col-6">
-                  Humidity:<span id="humidity">76</span> %
+                  Precipitation:<span id="precipitation"></span> %
                 </div>
                 <div class="col-6">
-                  Pressure: <span id="pressure">1013</span> mb
+                  Pressure: <span id="pressure"></span> mb
                 </div>
               </div>
 
@@ -85,17 +87,16 @@
                 <div class="col-6">
                   <img
                     src=" https://openweathermap.org/img/wn/01d@2x.png"
-                  />Sunrise: <span id="sunrise">6:58</span>
+                  />Sunrise: <span id="sunrise"></span>
                 </div>
                 <div class="col-6">
                   <img
                     src=" https://openweathermap.org/img/wn/01n@2x.png"
-                  />Sunset: <span id="sunset">17:45</span>
+                  />Sunset: <span id="sunset"></span>
                 </div>
               </div>
               <br />
 
-              <br />
               <small>
                 Hey You, beautiful Being, have a wonderful day, everyday!</small
               >
@@ -114,9 +115,10 @@
       </div>
 
       <div class="gitHub-link">
+        Open-source
         <a href="https://github.com/miozotis/weather-app" target="_blank">
-          Open-source code</a
-        >, created with ❤ by Cristina
+          code</a
+        >, created with ❤ by Cristina Zane
       </div>
     </div>
 

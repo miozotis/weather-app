@@ -11,44 +11,48 @@ body {
 
 h2 {
   text-align: center;
-  font-size: 28px;
-  padding: 10px;
+  padding: 20px;
   text-transform: capitalize;
+  margin-top: 30px;
 }
-#country {
-  font-size: small;
-}
+
 h4 {
   text-align: center;
   font-size: small;
   line-height: 12px;
 }
 
-p {
-  text-align: center;
-  font-size: 34px;
-  background: rgb(221, 243, 223, 0.3);
-  line-height: 45px;
-  border: 1px solid rgb(235, 232, 232, 0.9);
-  border-radius: 4px;
-  text-transform: capitalize;
-}
-.temperature {
-  font-size: 46px;
-}
-.description:first-letter {
-  text-transform: capitalize;
+a {
+  color: rgb(16, 144, 16);
+  text-decoration: none;
 }
 
 footer {
   text-align: center;
   font-size: small;
   line-height: 24px;
+  padding: 10px;
 }
 
-a {
-  color: rgb(16, 144, 16);
-  text-decoration: none;
+#country {
+  font-size: small;
+}
+
+.cityWeatherParagraph {
+  text-align: center;
+  font-size: 34px;
+  background: rgb(221, 243, 223, 0.3);
+  line-height: 45px;
+  border: 1px solid rgb(235, 232, 232, 0.9);
+  border-radius: 4px;
+}
+
+.description::first-letter {
+  text-transform: capitalize;
+}
+
+.temperature {
+  font-size: 48px;
 }
 
 .card {
